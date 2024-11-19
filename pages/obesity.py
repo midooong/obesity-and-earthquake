@@ -1,6 +1,13 @@
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
+from matplotlib import rc
+
+# 한글 폰트 설정
+rc('font', family='NanumGothic')  # Linux 환경
+# rc('font', family='Malgun Gothic')  # Windows 환경
+# rc('font', family='AppleGothic')  # Mac 환경
+plt.rcParams['axes.unicode_minus'] = False  # 마이너스 기호 깨짐 방지
 
 # 로그인 상태 확인
 if "ID" not in st.session_state or st.session_state["ID"] == "None":
